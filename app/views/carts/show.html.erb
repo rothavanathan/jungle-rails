@@ -3,7 +3,8 @@
   <header class="page-header">
     <h1>My Cart</h1>
   </header>
-
+  
+  <% if enhanced_cart.size != 0 %>
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +49,7 @@
       <% end %>
     </div>
   </div>
-
+  <% else %>
+    <p class="alert alert-danger py-4">Looks like you need to do some more shopping =)</p>
+  <% end %>
 </section>
