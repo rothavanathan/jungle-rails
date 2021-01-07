@@ -18,6 +18,9 @@ Rails.application.routes.draw do
     root to: 'dashboard#show'
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :create, :new]
+
+  get '/signup' => 'users#new'
+  post '/users' => 'users#create'
     
   end
 
