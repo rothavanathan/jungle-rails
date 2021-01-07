@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'about' => 'about#show'
 
   resources :products, only: [:index, :show]
-  resources :categories, only: [:show]
+  resources :categories, only: [:show, :new]
   resources :about, only: [:show]
 
   resource :cart, only: [:show] do
