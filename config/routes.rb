@@ -2,10 +2,12 @@ Rails.application.routes.draw do
 
   root to: 'products#index'
   get 'about' => 'about#show'
+  get '/signup' => 'users#new'
 
   resources :products, only: [:index, :show]
   resources :categories, only: [:show, :new]
   resources :about, only: [:show]
+  resources :users, only: [:create]
 
   resource :cart, only: [:show] do
     post   :add_item
@@ -19,8 +21,8 @@ Rails.application.routes.draw do
     resources :products, except: [:edit, :update, :show]
     resources :categories, only: [:index, :create, :new]
 
-  get '/signup' => 'users#new'
-  post '/users' => 'users#create'
+  
+ 
     
   end
 
