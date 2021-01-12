@@ -9,4 +9,12 @@ class User < ActiveRecord::Base
   
   attr_accessor :first_name, :last_name
   
+  def authenticate_with_credentials (email, password)
+    user = User.find_by_email(email)
+    if user && user.authenticate(password)
+      user
+    else
+      nil
+    end 
+  end
 end
