@@ -67,7 +67,5 @@ RSpec.describe User, type: :model do
       result = @new_user.authenticate_with_credentials('pOpeye@gmAil.cOm', 'password123')
       expect(result).to be_instance_of(User)
     end
-
-
   end
 end
