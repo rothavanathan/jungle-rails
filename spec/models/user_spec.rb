@@ -53,5 +53,21 @@ RSpec.describe User, type: :model do
       result = @new_user.authenticate_with_credentials('popeye@gmail.com', 'passw23')
       expect(result).to be_nil
     end
+    
+    it "will return user even if email has leading or trailing whitespace" do
+      @new_user = User.new(first_name: "Popeye", last_name: "Jones", email: "popeye@gmail.com", password: "password123", password_confirmation: "password123")
+      @new_user.save!
+      result = @new_user.authenticate_with_credentials('  popeye@gmail.com  ', 'password123')
+      expect(result).to be_instance_of(User)
+    end
+
+    it "will return user even if email has incorrect casing" do
+      @new_user = User.new(first_name: "Popeye", last_name: "Jones", email: "popEye@Gmail.CoM", password: "password123", password_confirmation: "password123")
+      @new_user.save!
+      result = @new_user.authenticate_with_credentials('pOpeye@gmAil.cOm', 'password123')
+      expect(result).to be_instance_of(User)
+    end
+
+
   end
 end
