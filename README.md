@@ -2,6 +2,15 @@
 
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
+Built for the Lighthouse Labs Web Development bootcamp by Romesh Thavanathan.
+
+## Tech Stack
+Tech that I actively worked with on this project.
+
+- Ruby on Rails
+- Active Record
+- Rspec, Capybara, Poltergeist
+- PostGresQL
 
 ## Setup
 
@@ -19,9 +28,3 @@ A mini e-commerce application built with Rails 4.2 for purposes of teaching Rail
 Use Credit Card # 4111 1111 1111 1111 for testing success scenarios.
 
 More information in their docs: <https://stripe.com/docs/testing#cards>
-
-## Dependencies
-
-* Rails 4.2 [Rails Guide](http://guides.rubyonrails.org/v4.2/)
-* PostgreSQL 9.x
-* Stripe
