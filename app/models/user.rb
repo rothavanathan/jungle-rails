@@ -9,9 +9,8 @@ class User < ActiveRecord::Base
 
   before_create :format_email 
   
-  attr_accessor :first_name, :last_name
   
-  def authenticate_with_credentials (email, password)
+  def self.authenticate_with_credentials (email, password)
     email = email.strip.downcase
     user = User.find_by_email(email)
     if user && user.authenticate(password)
